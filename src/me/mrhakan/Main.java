@@ -5,8 +5,8 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner islemGir = new Scanner(System.in);
-        System.out.print("İşlem yöntemi giriniz" + "\n" + "Toplama için: 1 | " + "Çıkarma için: 2 | " + "Çarpma için: 3 | " + "Bölme için: 4 " + "giriniz" + "\n:" );
-        int yontem = islemGir.nextInt();
+        System.out.print("İşlem yöntemi giriniz: " );
+        String yontem = islemGir.nextLine();
 
         Scanner sayi1gir = new Scanner(System.in);
         System.out.println("1. Sayıyı giriniz: ");
@@ -16,25 +16,31 @@ public class Main {
         System.out.println("2. Sayıyı giriniz: ");
         int sayi2 = sayi2gir.nextInt();
 
-        if (yontem == 1) {
+        String topla = "Toplama";
+        String cikar = "Çıkarma";
+        String carp = "Çarpma";
+        String bol = "Bölme";
+
+        if (yontem.equals(topla)) {
             int toplama = sayi1 + sayi2;
             System.out.println("Sonuç: " + toplama);
+        } else {
+            if (yontem.equals(cikar)) {
+                int cikarma = sayi1 - sayi2;
+                System.out.println("Sonuç: " + cikarma);
+            } else {
+                if (yontem.equals(carp)) {
+                    int carpma = sayi1 * sayi2;
+                    System.out.println("Sonuç: " + carpma);
+                } else {
+                    if (yontem.equals(bol)) {
+                        int bolme = sayi1 / sayi2;
+                        System.out.println("Sonuç: " + bolme);
+                    } else {
+                        System.out.println("İşlem yöntemi geçersiz bir yöntemdir lütfen tekrar giriniz.");
+                    }
+                }
+            }
         }
-
-        if (yontem == 2) {
-            int cikarma = sayi1 - sayi2;
-            System.out.println("Sonuç: " + cikarma);
-        }
-
-        if (yontem == 3) {
-            int carpma = sayi1 * sayi2;
-            System.out.println("Sonuç: " + carpma);
-        }
-
-        if (yontem == 4) {
-            int bolme = sayi1 / sayi2;
-            System.out.println("Sonuç: " + bolme);
-        }
-
     }
 }
